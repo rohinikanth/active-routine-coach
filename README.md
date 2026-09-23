@@ -2,6 +2,8 @@
 
 ActiveRoutine Coach is an AI assistant built with Google Agent Development Kit (ADK) and deployed to Vertex AI Agent Runtime. It helps users stay active with quick, low-friction micro-routines (stretches, micro-workouts, posture resets, and recovery nutrition), tracks personal habits, remembers allergies across sessions, and generates motivational badge images.
 
+![ActiveRoutine Coach Demo](demo.gif)
+
 ---
 
 ## Key Features & Connected Services
