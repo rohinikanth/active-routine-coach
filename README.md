@@ -4,6 +4,8 @@ ActiveRoutine Coach is an AI assistant built with Google Agent Development Kit (
 
 ![ActiveRoutine Coach Demo](demo.gif)
 
+*Watch full video demo with soundtrack: [MP4 Video](active_routine_coach_demo.mp4) | [WebM Video](active_routine_coach_demo.webm)*
+
 ---
 
 ## Key Features & Connected Services
