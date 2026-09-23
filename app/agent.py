@@ -38,6 +38,7 @@ from app.tools.firestore_tools import (
     search_workouts,
 )
 from app.tools.image_tools import generate_routine_image
+from app.tools.video_tools import generate_routine_video
 
 AGENT_ENGINE_RESOURCE = "projects/1008895575460/locations/us-central1/reasoningEngines/848237486701281280"
 
@@ -53,7 +54,7 @@ a2ui_instruction = schema_manager.generate_system_prompt(
         "and ALL user allergies (such as food, environmental, material, or ingredient allergies) "
         "from previous conversations and proactively use them to personalize your responses and recommendations. "
         "You can search, retrieve, add, log workouts, calculate calorie/MET metrics, fetch global exercise ideas, "
-        "generate motivational badge images, and execute Python code safely in your Agent Engine sandbox."
+        "generate motivational badge images, generate short exercise routine videos, and execute Python code safely in your Agent Engine sandbox."
     ),
     workflow_description="Analyze the request and return structured UI when appropriate.",
     ui_description=(
@@ -138,6 +139,7 @@ root_agent = Agent(
         calculate_workout_stats,
         fetch_public_exercise_catalog,
         generate_routine_image,
+        generate_routine_video,
     ],
     after_agent_callback=generate_memories_callback,
     after_model_callback=a2ui_callback,

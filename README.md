@@ -10,7 +10,7 @@ ActiveRoutine Coach is an AI assistant built with Google Agent Development Kit (
 - **Google Cloud Firestore**: Provides persistence for workout routines and activity logs. Supports searching, retrieving, adding new routines, and logging activity completions.
 - **Domain Stats Calculator**: Calculates total calorie burn and MET (Metabolic Equivalent of Task) metrics for logged activities.
 - **Wger Exercise API Integration**: Fetches exercise suggestions from the free public Wger REST API (`https://wger.de/api/v2/exerciseinfo/`).
-- **Gemini Image Generation & Public Cloud Storage**: Generates motivational badge images using `gemini-3.1-flash-lite-image`, saves artifacts locally, and uploads image bytes directly to a public Google Cloud Storage bucket to return public HTTPS URLs.
+- **Gemini Image & Video Generation with Cloud Storage**: Generates motivational badge images (`gemini-3.1-flash-lite-image`) and short routine exercise video clips (`gemini-omni-flash-preview` in `global` region). Saves artifacts with `tool_context.save_artifact` and uploads media bytes directly to a public Google Cloud Storage bucket to return public HTTPS URLs.
 - **Agent Engine Sandbox Code Execution**: Securely executes Python scripts in an isolated Agent Engine sandbox environment (`AgentEngineSandboxCodeExecutor`).
 - **A2UI Rich Card Rendering**: Emits A2UI schema version 0.8 surfaces (Cards, Columns, Rows, Text, Images) transformed via `a2ui_callback` for native card rendering in dev UI and web frontends.
 - **FastAPI A2A Proxy & Web UI**: Includes a lightweight FastAPI web proxy (`frontend/main.py`) that communicates with the deployed agent over the Agent-to-Agent (A2A) protocol.
@@ -24,6 +24,7 @@ ActiveRoutine Coach is an AI assistant built with Google Agent Development Kit (
 - **`app/tools/firestore_tools.py`**: Firestore CRUD tools (`get_workout`, `search_workouts`, `add_workout_routine`, `log_completed_activity`) and `calculate_workout_stats`.
 - **`app/tools/external_api_tools.py`**: Wger public REST API tool (`fetch_public_exercise_catalog`).
 - **`app/tools/image_tools.py`**: Gemini image generation & GCS upload tool (`generate_routine_image`).
+- **`app/tools/video_tools.py`**: Gemini video generation tool (`generate_routine_video`) using `gemini-omni-flash-preview` in global region & GCS upload.
 - **`frontend/`**: FastAPI proxy server (`main.py`) and chat interface (`static/index.html`) using the A2A protocol.
 - **`agents-cli-manifest.yaml`**: Project deployment configuration for Vertex AI Agent Runtime.
 
